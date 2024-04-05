@@ -4,10 +4,12 @@ import './App.css';
 
 function App(){
     let [counter,setCounter]=useState(0);
-  
+  let handler=()=>{
+    setCounter(counter+=1)
+  }
   return (<div>
    <p> this is my Counter : {counter}</p>
-   <button onClick={setCounter(counter+=1)}>click</button>
+   <button onClick={handler}>click</button>
   </div>)
 }
 
