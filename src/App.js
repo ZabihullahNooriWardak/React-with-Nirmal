@@ -7,8 +7,13 @@ function App(){
   
   return (<div>
    <p> this is my Counter : {counter}</p>
-   <button onClick={setCounter(counter+=1)}>click</button>
+   <button onClick={()=>setCounter(counter+=1)}>click</button>
   </div>)
 }
 
 export default App;
+
+
+
+
+
