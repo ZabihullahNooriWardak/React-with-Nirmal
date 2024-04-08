@@ -13,8 +13,8 @@ function counterFunction(op){
 }
   return (<div>
    <p> this is my Counter : {counter}</p>
-   <button onClick={()=>counterFunction('+')}>increment</button>
-   <button onClick={()=>counterFunction('-')}>decrement</button>
+   <button className="st" onClick={()=>counterFunction('+')}>increment</button>
+   <button style={{height:"50px",width:"80px",backgroundColor:"blue"}} onClick={()=>counterFunction('-')}>decrement</button>
   </div>)
 }
 
