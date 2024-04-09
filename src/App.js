@@ -5,7 +5,8 @@ function App(){
     let [obj,setObj]=useState({counter:0,booleanVale:true});
 function counterFunction(op){
   if(op==='+'){
-    setObj({...obj,counter:obj.counter+1})
+    let newCounter=obj.counter+1
+    setObj({...obj,counter:newCounter})
   }else{
 
 setObj({...obj,counter:obj.counter-1})
