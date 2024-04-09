@@ -1,21 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
-import './App.css';
-let myMessage = React.createElement("h2",{style:{color:'red'}},"hello dear User!")
+import "./App.css"
 function App(){
-    let [counter,setCounter]=useState(0);
+    let [obj,setObj]=useState({counter:0,booleanVale:true});
 function counterFunction(op){
   if(op==='+'){
-    setCounter(counter+1)
+    setObj({...obj,counter:obj.counter+1})
   }else{
-    setCounter(counter-1)
+
+setObj({...obj,counter:obj.counter-1})
   }
 }
   return (<div>
-    {myMessage}
-   <p> this is my Counter : {counter}</p>
+   <p> this is my Counter : {obj.counter}</p>
    <button className="st" onClick={()=>counterFunction('+')}>increment</button>
    <button style={{height:"50px",width:"80px",backgroundColor:"blue"}} onClick={()=>counterFunction('-')}>decrement</button>
+   <h1>{obj.booleanVale.toString()}</h1>
+   <button onClick={()=>setObj({...obj,booleanVale:!obj.booleanVale})}>toggle</button>
   </div>)
 }
 
