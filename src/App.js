@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./App.css"
-class App extends Component{
-   render(){
-    return (<div>hello Afghanistan</div>)
-   }
+function App(){
+     let [date,setDate]=useState(new Date())
+useEffect(function(){
+    setTimeout(() => {
+ setDate(new Date());
+    }, 1000);
+});
+  return (<div>
+{date.toLocaleTimeString()}
+  </div>)
 }
 export default App;
 
