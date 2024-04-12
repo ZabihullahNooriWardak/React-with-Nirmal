@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "./App.css"
 function App(){
      let [date,setDate]=useState(new Date())
-useEffect(()=>{
+let myFunction=()=>{
   setTimeout(() => {
     setDate(new Date());
        }, 1000)
 }
-);
+myFunction();
   return (<div>
 {date.toLocaleTimeString()}
   </div>)
