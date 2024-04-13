@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Currenttiming from './timer';
 import "./App.css"
 function App(){
-  return 
+  return <Currenttiming />
 }
 export default App;
 

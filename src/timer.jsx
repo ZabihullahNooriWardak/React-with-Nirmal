@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
-function currentTime(){
-    let [date,setDate]=useState(new Date().toLocaleDateString());
+function Currenttiming(){
+    let [date,setDate]=useState(new Date().toString());
     useEffect(()=>{
-        let timer=setTimeout(() => {
-            setDate(new Date().toLocaleDateString());
+        let timer=setInterval(() => {
+            
+            setDate(new Date().toString());
         }, 1000);
         return ()=>{
             console.log("clean up code goes here");
-            clearTimeout(timer);
+            clearInterval(timer);
         }
     },[])
     return (
-        <h1>{new Date().toLocaleDateString()}</h1>
+        <h1>{date}</h1>
     )
 }
+export default Currenttiming;
