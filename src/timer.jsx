@@ -1,21 +1,39 @@
-    import React, { useEffect, useState } from "react";
-    function Currenttiming(){
-        let [date,setDate]=useState(new Date().toString());
-      
-        useEffect(()=>{
-            let timer=setInterval(() => {   
-                setDate(new Date().toString());
-            }, 1000);
-            return ()=>{
-                console.log("clean up code goes here");
-                clearInterval(timer);
-            }
-        },[])
-        return (
-            <div>
-            <h1>{date} </h1>
-           
-            </div>
-        )
+// Function to calculate the factorial of a number
+function factorial(n) {
+    if (n === 0 || n === 1) {
+      return 1;
+    } else {
+      return n * factorial(n - 1);
     }
-    export default Currenttiming;
+  }
+  
+  // Without memoization
+  console.time("Without Memoization");
+  console.log(factorial(5)); // Output: 120
+  console.log(factorial(5)); // Output: 120 (same result, but recalculated)
+  console.timeEnd("Without Memoization");
+  
+  // With memoization
+  function memoizedFactorial() {
+    let cache = {};
+    return function(n) {
+      if (n in cache) {
+        return cache[n];
+      } else {
+        if (n === 0 || n === 1) {
+          return 1;
+        } else {
+          cache[n] = n * memoizedFactorial()(n - 1);
+          return cache[n];
+        }
+      }
+    };
+  }
+  
+  const memoizedFunc = memoizedFactorial();
+  
+  console.time("With Memoization");
+  console.log(memoizedFunc(5)); // Output: 120
+  console.log(memoizedFunc(5)); // Output: 120 (result retrieved from cache)
+  console.timeEnd("With Memoization");
+  
