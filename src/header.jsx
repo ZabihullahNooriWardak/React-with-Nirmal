@@ -1,6 +1,6 @@
 import React from "react";
 function Header() {
-    console.log("Header .....")
+    console.log("Header is called.....")
     let myHeaderStyle={border:"2px solid grey",color: "grey",width:"50%"}
   return (
     <div>
@@ -8,4 +8,4 @@ function Header() {
     </div>
   );
 }
-export default Header;
+export default React.memo(Header);

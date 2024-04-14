@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useState,useCallback} from "react";
 import Header from "./header";
-import {Footer} from "./footer"
-import { DisplayCounter } from "./displayCount";
-import { Flag } from "./displayFlag";
+import Footer from "./footer"
+import DisplayCounter  from "./displayCount";
+import  Flag  from "./displayFlag";
 import MyButtonnn from "./changeState";
 export function App() {
   let [counter,setCounter]=useState(0);
   let [flag,setFlag]=useState(true);
-  function counterHandler(){
+ let counterHandler = useCallback(()=>{
     setCounter(counter+1);
-  }
-  function flagHandler(){
-    setFlag(!flag);
-  }
+  },[counter]);
+  let flagHandler=useCallback(()=>{
+    setFlag(!flag)
+  },[flag]);
+  console.log("App is called ........");
   return <div>
     <Header />
    <DisplayCounter counterValue={counter} />
