@@ -2,23 +2,18 @@ import React, { useState } from "react";
 
 function App() {
 const [persInfo,setpersInfo]=useState({name:"",lastname:"",mobile:""})
-function FirstName(e){
-setpersInfo({...persInfo,name:e.target.value})
+function onchangeMethod(e){
+setpersInfo({...persInfo,[e.target.name]:e.target.value})
 }
-function LastName(e){
-  setpersInfo({...persInfo,lastname:e.target.value})
-}
-function Mobile(e){
-  setpersInfo({...persInfo,mobile:e.target.value})
-}
+
   return (
     <React.Fragment>
   <form>
-    <input type="text" placeholder="First name" onChange={FirstName}></input>
+    <input type="text" placeholder="First name" name="name" onChange={onchangeMethod}></input>
     <br></br>
-    <input type="text" placeholder="last name" onChange={LastName}></input>
+    <input type="text" placeholder="last name" name="lastname" onChange={onchangeMethod}></input>
     <br></br>
-    <input type="text" placeholder="Mobile number" onChange={Mobile}></input>
+    <input type="text" name="mobile" placeholder="Mobile number" onChange={onchangeMethod}></input>
     <br></br>
     <input type="submit" value="submit"></input>
   </form>
