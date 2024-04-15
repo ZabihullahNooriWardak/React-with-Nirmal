@@ -1,7 +1,9 @@
 import React from "react";
 function CustomComponent(props){
     return <div>
-        <h1>{props.name.toString()}</h1>
+      {/* {JSON.stringify(props)} */}
+        <h1>{props.data}</h1>
+        <p>{props.children}</p>
     </div>
 }
 export default CustomComponent;
