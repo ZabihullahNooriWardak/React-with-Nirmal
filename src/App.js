@@ -1,12 +1,10 @@
 import React from "react";
+import CustomComponent from "./MyComponent";
  function App() {
-  //practicing map function of array in jsx
   
-  let myArr = ["apple","pear","banana","orange","tangenraen"]
-  let myFunc = (<div>
-    {myArr.map((item,index)=><li key={index.toString()}>{item}</li>)}
-  </div>);
-  return myFunc;
+  return <div>
+    <CustomComponent name/>
+  </div>
 }
 export default App;
 
