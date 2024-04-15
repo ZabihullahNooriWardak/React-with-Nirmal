@@ -1,26 +1,19 @@
 import React, { useState } from "react";
 
 function App() {
-  let [firstName,setFirstName]=useState("")
-  let [lastName,setLastName]=useState("")
-  let [mobile,setMobile]=useState("")
-  let [allData,setAllData]=useState("No data yet")
+const [persInfo,setpersInfo]=useState({name:"",lastname:"",mobile:""})
 function FirstName(e){
-  setFirstName(e.target.value)
+setpersInfo({...persInfo,name:e.target.value})
 }
 function LastName(e){
-  setLastName(e.target.value)
+  setpersInfo({...persInfo,lastname:e.target.value})
 }
 function Mobile(e){
-  setMobile(e.target.value)
-}
-function submission(e){
-  e.preventDefault();
-setAllData(firstName+","+lastName+","+mobile);
+  setpersInfo({...persInfo,mobile:e.target.value})
 }
   return (
     <React.Fragment>
-  <form onSubmit={submission}>
+  <form>
     <input type="text" placeholder="First name" onChange={FirstName}></input>
     <br></br>
     <input type="text" placeholder="last name" onChange={LastName}></input>
@@ -29,7 +22,7 @@ setAllData(firstName+","+lastName+","+mobile);
     <br></br>
     <input type="submit" value="submit"></input>
   </form>
-  {allData}
+  {JSON.stringify(persInfo)}
     </React.Fragment>
   );
 }
