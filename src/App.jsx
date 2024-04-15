@@ -1,26 +1,9 @@
-import React, { useState,useCallback} from "react";
-import Header from "./header";
-import Footer from "./footer"
-import DisplayCounter  from "./displayCount";
-import  Flag  from "./displayFlag";
-import MyButtonnn from "./changeState";
-export function App() {
-  let [counter,setCounter]=useState(0);
-  let [flag,setFlag]=useState(true);
- let counterHandler = useCallback(()=>{
-    setCounter(counter+1);
-  },[counter]);
-  let flagHandler=useCallback(()=>{
-    setFlag(!flag)
-  },[flag]);
-  console.log("App is called ........");
+import React from "react";
+ function App() {
+  //practicing map function of array in jsx
+  let myArr = ["apple","pear","banana","orange"]
   return <div>
-    <Header />
-   <DisplayCounter counterValue={counter} />
-   <Flag flagValue={flag.toString()}/>
-   <MyButtonnn buttonName="CounterButton" clickHandler={counterHandler}/>
-   <MyButtonnn buttonName="FlagButton" clickHandler={flagHandler} />
-    <Footer />
+    {myArr.map((item)=><li>{item}</li>)}
   </div>;
 }
 export default App;
