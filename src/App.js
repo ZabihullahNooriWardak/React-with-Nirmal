@@ -1,10 +1,13 @@
-import React from "react";
-import CustomComponent from "./MyComponent";
+import React, { useState } from "react";
  function App() {
-  
-  return <div>
-    <CustomComponent data={"data passed to props"}> <div>some dataherefffff<h1> i am h1</h1><input></input></div></CustomComponent>
-  </div>
+  let [paragraph,setParagraph]=useState("");
+  let txtBox=(e)=>{
+    setParagraph(e.target.value);
+  }
+  return <React.Fragment>
+    <p>the TextBox data is here : {paragraph}</p>
+     <input onChange={txtBox}></input>
+  </React.Fragment>
 }
 export default App;
 
