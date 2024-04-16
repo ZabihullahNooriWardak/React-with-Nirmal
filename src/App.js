@@ -1,25 +1,38 @@
 import React, { useState } from "react";
 
 function App() {
-const [persInfo,setpersInfo]=useState({name:"",lastname:"",mobile:""})
-function onchangeMethod(e){
-  setpersInfo((pState)=>({...pState,[e.target.name]:e.target.value}))
-}
-function myFunc(e){
-  e.preventDefault();
-}
+  const[allDate,setData]=useState({name:"",gender:"",status:"",mobile:"",showingStatus:false});
+   
+  function formHandler(e){
+     e.preventDefault();
+     setData((prevState)=>({...prevState,showingStatus:true}))
+  }
+ 
+  function chkBoxHandler(e){
+    if(e.target.checked){
+    setData((prevState=>({...prevState,status:"married"})))
+    }else{
+      setData((prevState=>({...prevState,status:"single"})))
+    }
+  }
+  function genderHandler(e){
+    setData((prevState=>({...prevState,[e.target.name]:e.target.value})))
+  }
   return (
-    <React.Fragment>
-  <form onSubmit={myFunc}>
-    <input type="text" placeholder="First name" name="name" onChange={onchangeMethod}></input>
+    <React.Fragment> 
+  <form onSubmit={formHandler}>
+  <span>Employee Name</span>  <input name="name" onChange={genderHandler} type="text" ></input>
     <br></br>
-    <input type="text" placeholder="last name" name="lastname" onChange={onchangeMethod}></input>
+ <span>Gender</span> <input name="gender" type="radio"  onChange={genderHandler} value="male" ></input>Male
+ <input onChange={genderHandler} type="radio" name="gender" value="female"></input>female
     <br></br>
-    <input type="text" name="mobile" placeholder="Mobile number" onChange={onchangeMethod}></input>
+   <span>Married</span> <input onChange={chkBoxHandler} type="checkbox"  ></input>
+    <br></br> 
+    Mobile : <input name="mobile" onChange={genderHandler} type="text"></input>
     <br></br>
     <input type="submit" value="submit"></input>
   </form>
-  {JSON.stringify(persInfo)}
+  {allDate.showingStatus?<div>{(JSON.stringify(allDate))}</div>:false}
     </React.Fragment>
   );
 }
