@@ -4,11 +4,6 @@ function Product(props){
     },{id:2,name:"banana"},{
         id:3,name:"pear"
     }]
-if(props.isAdmin){
-    return products.map((item)=><p>{item.name}</p>)
-}else{
-    return <p>nothing or no data </p> 
-}
-
+    return (props.isAdmin ?products.map((item)=><p>{item.name}</p>) : <p>nothing or no data </p> )
 }
 export default Product;
