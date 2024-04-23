@@ -1,8 +1,7 @@
 import React from "react";
-import { Link, useMatch } from "react-router-dom";
-function Course(){
-    let usematch=useMatch();
-console.log(usematch);
+import { Link } from "react-router-dom";
+function Profile(){
+    let arr=[0,1,2,3,4,5,6]
     return <div>
         <ul>
             <Link><li><h3>Javascript interveiw question</h3></li></Link>
@@ -15,4 +14,4 @@ console.log(usematch);
         </ul>
     </div>
 }
-export default Course;
+export default Profile;

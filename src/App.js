@@ -2,8 +2,8 @@ import React from 'react';
 import { Route,Link,BrowserRouter, Routes } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
-import Course from './Course';
-import Coursedetail from './Coursedetail';
+import Course from './profile';
+import Coursedetail from './profileDetail';
 function App() {
   let style={margin:"10px",fontSize:"25px",}
     return (
