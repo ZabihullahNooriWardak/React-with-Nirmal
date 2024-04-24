@@ -4,6 +4,7 @@ import BookList from "./BookList"
 import Home from "./Home"
 import Book from "./Book"
 import NewBook from "./NewBook"
+import NotFound from "./NotFound"
 function App(){
   return <BrowserRouter>
   <ul>
@@ -17,9 +18,12 @@ function App(){
   </ul>
 <Routes>
 <Route path="/" element={<Home />}/>
-<Route path="/books" element={<BookList />}/>
-<Route  path="/books/:id" element={<Book/>} />
-<Route path="/books/new" element={<NewBook />} />
+<Route path="/books" >
+  <Route index element={<BookList />}/>
+  <Route path=":id" element={<Book/>} />
+  <Route path="new" element={<NewBook/>} />
+  </Route>
+<Route path="*"  element={<NotFound />} />
 </Routes>
   </BrowserRouter>
 }
