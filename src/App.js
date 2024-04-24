@@ -1,9 +1,7 @@
 import React from "react"
 import { BrowserRouter,Route,Routes,Link,NavLink } from "react-router-dom"
-import BookList from "./BookList"
 import Home from "./Home"
-import Book from "./Book"
-import NewBook from "./NewBook"
+import BookRoutes from "./BookRoutes"
 import NotFound from "./NotFound"
 import SharedBookLayout from "./SharedBookLayout"
 function App(){
@@ -22,10 +20,7 @@ function App(){
   </ul>
 <Routes>
 <Route path="/" element={<Home />}/>
-<Route path="/books" element={<SharedBookLayout/>}>
-  <Route index element={<BookList />}/>
-  <Route path=":id" element={<Book/>} />
-  <Route path="new" element={<NewBook/>} />
+<Route path="/books/*" element={<BookRoutes/>}>
   </Route>
 <Route path="*"  element={<NotFound />} />
 </Routes>
