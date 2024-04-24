@@ -8,7 +8,7 @@ import NotFound from "./NotFound"
 import SharedBookLayout from "./SharedBookLayout"
 function App(){
   return <BrowserRouter>
-  <Routes location="/books">
+  <Routes>
     <Route path="/books" element={<h1>Hello afghanistan</h1>}  />
   </Routes>
   <ul>
