@@ -1,24 +1,26 @@
-import React from 'react';
-import { Route,Link,BrowserRouter, Routes } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import Course from './profile';
-import Coursedetail from './profileDetail';
-function App() {
-  let style={margin:"10px",fontSize:"25px",}
-    return (
-      <BrowserRouter>
-      <Link style={style} to="/">home</Link>
-      <Link style={style} to="/about">about</Link>
-      <Link style={style} to="/courses">Courses</Link>
-      <Routes>
-        <Route path="/" element={<Home/>}></Route>
-        <Route path="/about" element={<About/>}></Route>
-        <Route path='/courses' element={<Course/>}></Route>
-        <Route path='/courses/:details' element={<Coursedetail/>}></Route>
-      </Routes>
-      </BrowserRouter>
-    );
-  }
+import React from "react"
+import { BrowserRouter,Route,Routes,Link,NavLink } from "react-router-dom"
+import BookList from "./BookList"
+import Home from "./Home"
+import Book from "./Book"
+import NewBook from "./NewBook"
+function App(){
+  return <BrowserRouter>
+  <ul>
+    <li>
+  <Link to="/">Home</Link>
+    </li>
+    <li>
+  <Link to="/books">Books</Link>
 
+    </li>
+  </ul>
+<Routes>
+<Route path="/" element={<Home />}/>
+<Route path="/books" element={<BookList />}/>
+<Route  path="/books/:id" element={<Book/>} />
+<Route path="/books/new" element={<NewBook />} />
+</Routes>
+  </BrowserRouter>
+}
 export default App;
