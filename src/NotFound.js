@@ -1,4 +1,6 @@
+import { Navigate } from "react-router-dom";
+
 function NotFound(){
-    return <h1>the page doesn't exist</h1>
+    return <Navigate to="/"/>
 }
 export default NotFound;

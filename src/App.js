@@ -1,9 +1,10 @@
 import React from "react"
-import { BrowserRouter,Route,Routes,Link,NavLink, useRoutes } from "react-router-dom"
+import { BrowserRouter,Route,Routes,NavLink, useRoutes } from "react-router-dom"
 import Home from "./Home"
 import BookRoutes from "./BookRoutes"
 import NotFound from "./NotFound"
 import SharedBookLayout from "./SharedBookLayout"
+import './someStyle.css'
 function App(){
 //    let elements=useRoutes([
 // {path:"/",element:<Home/>},
@@ -16,10 +17,10 @@ function App(){
   </Routes> */}
   <ul>
     <li>
-  <Link to="/">Home</Link>
+  <NavLink style={({isActive})=>{isActive?{color:"red"}:{}}} to="/">Home</NavLink>
     </li>
     <li>
-  <Link to="/books">Books</Link>
+  <NavLink to="/books">Books</NavLink>
 
     </li>
   </ul>
