@@ -6,7 +6,7 @@ function Home() {
         <>
            <h1>{defaultV.counterV}</h1>
             <button onClick={() => {  defaultV.setCounterV(defaultV.counterV+1) }}>increment</button>
-            <button onClick={() => { defaultV.setCounterV(defaultV.counterV+1) }}>decrement</button>
+            <button onClick={() => { defaultV.setCounterV(defaultV.counterV-1) }}>decrement</button>
        
         </>
     )
