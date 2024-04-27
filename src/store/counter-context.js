@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { createContext } from "react";
 
-let counterContext=useContext(0);
+let counterContext=React.createContext();
 export default counterContext;

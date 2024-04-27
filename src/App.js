@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import About from "./About";
-import { Link, Route, Routes, useLocation } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 
 function App() {

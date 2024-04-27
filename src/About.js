@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import counterContext from "./store/counter-context";
 const About = () => {
-  let counterContext= useContext(counterContext);
+  let  cContext=useContext(counterContext)
   return (
-    <div>
+     <div>
       <h1>About Page</h1>
-      <p>{counterContext}</p>
+      <p>and the value of counter is : {cContext.counterV}</p>
     </div>
   );
 };
