@@ -1,6 +1,12 @@
 import React from "react";
-function About(){
-    let style={border:"0.7px solid grey"}
-    return <h1 style={style}>kjkkjlkjlkjl</h1>
-}
+
+const About = (props) => {
+  return (
+    <div>
+      <h1>About Page</h1>
+      <p>{props.counter}</p>
+    </div>
+  );
+};
+
 export default About;

@@ -1,13 +1,15 @@
 import React from "react";
-import { useState } from "react";
-function Home(){
-    let [counter,setCounter]=useState(0);
+
+function Home(props) {
     return (
         <>
-        <h1>{counter}</h1>
- <button onClick={()=>{setCounter(counter+1)}}>increment</button>
- <button onClick={()=>{setCounter(counter-1)}}>decrement</button>
+            <h1>{props.counter}</h1>
+            <button onClick={() => { props.setCounter(props.counter + 1) }}>increment</button>
+            <button onClick={() => { props.setCounter(props.counter - 1) }}>decrement</button>
+            <br></br>
+            {props.st}
         </>
     )
 }
+
 export default Home;
