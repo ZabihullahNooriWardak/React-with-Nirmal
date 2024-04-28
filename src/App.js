@@ -4,6 +4,7 @@ import About from "./about";
 import Profile from "./profiles";
 import ProfileDetail from "./profileDetail";
 import Home from "./home";
+import SharedLayout from "./shared-layout";
 function App() {
     return (
     <>
@@ -18,10 +19,13 @@ function App() {
     </nav>
 <Routes>
     <Route path="/" element={<Home/>}/>
+    <Route element={<SharedLayout/>}>
     <Route path="/about" element={<About/>}/>
     <Route path="/profile" element={<Profile/>}>
      <Route path=":id" element={<ProfileDetail/>}/>
+     </Route>
     </Route>
+
 </Routes>
     </>
     )
