@@ -4,8 +4,8 @@ function Cart(){
     let roleSelector=useSelector(state=>state.lr.loginDet)
    let cartElements= useSelector(state=>state.pr.cart);
                  let deleteDispatch=useDispatch();
-       function deleteHandler(inde){
-        deleteDispatch({type:"DELETE",value:inde})
+       function deleteHandler(index,value){
+        deleteDispatch({type:"DELETE",value:{index:index,element:value}})
        }
     return(
       <div className="customDiv">
@@ -13,7 +13,7 @@ function Cart(){
         <hr/>
          <ul>
             {cartElements.map((element,index,arr)=>{
-                return <li onClick={()=>deleteHandler(index)} key={index}>{element}</li>
+                return <li onClick={()=>deleteHandler(index,element)} key={index}>{element.name}</li>
             })}
          </ul>
       </div>
