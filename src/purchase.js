@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Purchase=()=>{
      let products=  useSelector(state=>state.pr.products);
+     let roleSelector=useSelector(state=>state.lr.loginDet)
      let selectionHandler=useDispatch()
      function purchaseHandler(e){
        let productName=e.target.options[e.target.selectedIndex].text;
@@ -10,7 +11,7 @@ const Purchase=()=>{
      }
     return(
         <div className="customDiv">
-        <h3>Purchase Component - User:-</h3>
+        <h3>Purchase Component - User:-{roleSelector}</h3>
         <hr/>
         <select onChange={(e)=>purchaseHandler(e)}>
             {

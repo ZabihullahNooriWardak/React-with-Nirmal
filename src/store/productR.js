@@ -17,6 +17,13 @@ const productReducer=(state=initData,action)=>{
         total:state.total+parseInt(action.value.price)
     }
     }
+    if(action.type==="DELETE"){
+        let newTotal=state.total-parseInt()
+        let newCart=state.cart.filter((element,index)=>{
+            return index!==action.value
+        })
+        return {...state,total:newTotal,cart:newCart}
+    }
 return state;
 }
 export default productReducer;

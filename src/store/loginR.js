@@ -1,4 +1,3 @@
-import { act } from "react"
 
 const initData={
     users:['admin','manager','end-user'],
@@ -6,7 +5,9 @@ const initData={
 }
 
 const loginReducer=(state=initData,action)=>{
-
+if(action.type==="LOGIN"){
+    return {...state,loginDet:action.value}
+}
 return state;
 }
 
