@@ -1,11 +1,18 @@
+import Purchase from "./purchase";
+import Login from "./login";
+import Cart from "./cart";
+import Total from "./total";
 import React from "react";
+import './App.css';
 function App() {
     return (
-        <>
-            <h1>Hello World</h1>
-            <p>This is a React app</p>
-    </>
-    )
-}
-
-export default App;
+      <div className="App">
+        <Login/>
+        <Purchase/>
+        <Cart/>
+        <Total/>
+      </div>
+    );
+  }
+  
+  export default App;
