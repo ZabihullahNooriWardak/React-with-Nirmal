@@ -5,7 +5,9 @@ const Login=()=>{
       let loginDispatch= useDispatch()
   function roleChangeHandler(e){
     let role=e.target.options[e.target.selectedIndex].text;
+   setTimeout(() => {
     loginDispatch({type:"LOGIN",value:role});
+   }, 3000);
 
   }
     return(
