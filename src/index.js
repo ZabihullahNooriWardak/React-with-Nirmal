@@ -6,7 +6,7 @@ import { combineReducers } from 'redux';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import productReducer from './store/productR';
-import loginReducer from './store/loginR';
+import loginReducer from './store/loginSlice';
 const rootReducer=combineReducers({
 pr:productReducer,
 lr:loginReducer
