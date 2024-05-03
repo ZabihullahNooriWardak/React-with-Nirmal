@@ -18,3 +18,5 @@ export function Counter() {
         </div>
     );
 }
+// let x=2;   x+="" console.log(x) //2 
+// let x=2; x+=" " console.log(x) //"2 " I mean it converts the number to string and then concatenate.
