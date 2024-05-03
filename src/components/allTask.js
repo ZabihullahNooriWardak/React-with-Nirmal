@@ -1,56 +1,22 @@
-import { useSelector, useDispatch } from "react-redux";
-import { deleteTask, updateTask } from "../taskSlice/taskSlice";
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { deletTask } from "../taskSlice/taskSlice";
+import { useDispatch } from "react-redux";
 import { ReactComponent as MyIcon } from './deleteIcon.svg';
 
-function AllTask() {
-  const tasksArr = useSelector(state => state.taskList.tasks);
-  const dispatch = useDispatch();
-  const [editIndex, setEditIndex] = useState(null);
-  const [editedTask, setEditedTask] = useState("");
 
-  const handleEdit = (index, task) => {
-    setEditIndex(index);
-    setEditedTask(task);
-  };
-
-  const handleUpdate = (index) => {
-    dispatch(updateTask({ index, updatedTask: editedTask }));
-    setEditIndex(null);
-    setEditedTask("");
-  };
-
+function  AllTask() {
+    let taksArr=useSelector(state=>state.taskList.tasks);
+    let dispatch=useDispatch();
   return (
     <div>
       <h1>All Task</h1>
       <ul>
-        {tasksArr.length === 0 ? <h4>No Task</h4> :
-          tasksArr.map((task, index) => (
-            <li key={index}>
-              {editIndex === index ? (
-                <>
-                  <input
-                    value={editedTask}
-                    onChange={(e) => setEditedTask(e.target.value)}
-                  />
-                  <button onClick={() => handleUpdate(index)}>Save</button>
-                </>
-              ) : (
-                <>
-                  {task}
-                  <MyIcon
-                    className="icon"
-                    onClick={() => dispatch(deleteTask(index))}
-                  />
-                  <button onClick={() => handleEdit(index, task)}>Edit</button>
-                </>
-              )}
-            </li>
-          ))
-        }
+
+        {taksArr.length===0? <h4>no Task</h4> :taksArr.map((task,index) => {
+          return <li key={index}>{task}--------------<MyIcon className="icon" onClick={()=>{dispatch(deletTask(index))}}/></li>;
+        })}
       </ul>
     </div>
   );
 }
-
 export default AllTask;
