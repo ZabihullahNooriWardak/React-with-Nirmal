@@ -1,12 +1,14 @@
-import React from "react";
-import './App.css';
-import { Counter } from "./features/counter/counter";
-function App() {
-    return (
-      <div className="App">
-<Counter/>
+// App.js
+import React from 'react';
+import AddTask from './components/addTask';
+import AllTask from './components/allTask';
+const App = () => {
+  return (
+      <div>
+      <AddTask/>
+      <AllTask/>
       </div>
-    );
-  }
-  
-  export default App;
+  );
+};
+
+export default App;
