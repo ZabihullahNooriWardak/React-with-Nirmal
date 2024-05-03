@@ -1,6 +1,9 @@
 import { useSelector } from "react-redux";
 import { deletTask } from "../taskSlice/taskSlice";
 import { useDispatch } from "react-redux";
+import { ReactComponent as MyIcon } from './deleteIcon.svg';
+
+
 function  AllTask() {
     let taksArr=useSelector(state=>state.taskList.tasks);
     let dispatch=useDispatch();
@@ -10,7 +13,7 @@ function  AllTask() {
       <ul>
 
         {taksArr.length===0? <h4>no Task</h4> :taksArr.map((task,index) => {
-          return <li onClick={()=>{dispatch(deletTask(index))}} key={index}>{task}</li>;
+          return <li key={index}>{task}                                 --------------  <MyIcon className="icon" onClick={()=>{dispatch(deletTask(index))}}  /></li>;
         })}
       </ul>
     </div>
