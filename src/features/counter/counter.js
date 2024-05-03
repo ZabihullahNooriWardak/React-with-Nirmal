@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment,resetTheValue,incrementByAmount } from "./counterSlice";
 export function Counter() {
-    const count = useSelector((state) => state.counter.value);
+    const count = useSelector((state) => state.counterc.value);
     const dispatch = useDispatch();
                     let [amount,setAmount]=useState(0)
     return (
