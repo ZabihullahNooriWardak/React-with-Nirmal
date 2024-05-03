@@ -4,7 +4,7 @@ import { decrement, increment,resetTheValue,incrementByAmount } from "./counterS
 export function Counter() {
     const count = useSelector((state) => state.counter.value);
     const dispatch = useDispatch();
-                    let [amount,setAmount]=useState("0")
+                    let [amount,setAmount]=useState(0)
     return (
         <div>
             <button onClick={() => dispatch(decrement())}>-</button>
