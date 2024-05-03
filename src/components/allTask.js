@@ -13,7 +13,7 @@ function  AllTask() {
       <ul>
 
         {taksArr.length===0? <h4>no Task</h4> :taksArr.map((task,index) => {
-          return <li key={index}>{task}                                 --------------  <MyIcon className="icon" onClick={()=>{dispatch(deletTask(index))}}  /></li>;
+          return <li key={index}>{task}--------------<MyIcon className="icon" onClick={()=>{dispatch(deletTask(index))}}/></li>;
         })}
       </ul>
     </div>
