@@ -86,3 +86,7 @@ li:last-child {
   left: 824px;
   /* right: 20px; */
 }
+.no{
+  width: 8%;
+  margin: 0 auto;
+}
