@@ -14,6 +14,7 @@ function  AllTask() {
       setEditIndex(index);
       setUpdateTask(task);
     }
+    
   return (
     <div>
       <h1>All Task</h1>
