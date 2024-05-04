@@ -9,10 +9,26 @@ function AddTask(){
     return (
         <>
           <h1>TaskMaster</h1>
-        <input value={taksState} onFocus={()=>{setTaskState("")}} onChange={(e)=>{setTaskState(e.target.value)}} placeholder='Enter your task'></input>
-        <br></br>
-        <br></br>
-        <button onClick={()=>{dispatch(addTask(taksState))}}>Add task</button>
+          <div className="input-container">
+  <input
+    value={taksState}
+    onFocus={() => {
+      setTaskState("");
+    }}
+    onChange={(e) => {
+      setTaskState(e.target.value);
+    }}
+    placeholder="Enter your task"
+  />
+  <button
+    onClick={() => {
+      dispatch(addTask(taksState));
+    }}
+  >
+    Add task
+  </button>
+</div>
+
         </>
     )
 }
