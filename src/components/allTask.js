@@ -24,8 +24,13 @@ function saveButtonHandler(index){
         <h1>All Task</h1>
         <ul>
 
-          {taksArr.length===0? <h4 className="no">no Task</h4> :taksArr.map((task,index) => {
-            return editIndex===index?<div key={index}> <input value={updateTask} onChange={(e)=>{setUpdateTask(e.target.value)}} ></input><button className="save" onClick={()=>{saveButtonHandler(index)}}>Save</button></div> : <li key={index}>{task}<MyIcon className="icon" onClick={()=>{dispatch(deletTask(index))}}/><button onClick={()=>{EditHandler(index,task)}}>Edit</button></li>;
+          {taksArr.length===0?
+           <h4 className="no">no Task</h4> :
+          taksArr.map((task,index) => {
+            return editIndex===index?
+            <div key={index}> <input value={updateTask} onChange={(e)=>{setUpdateTask(e.target.value)}} ></input><button className="save"
+             onClick={()=>{saveButtonHandler(index)}}>Save</button></div> :
+              <li key={index}>{task}<MyIcon className="icon" onClick={()=>{dispatch(deletTask(index))}}/><button onClick={()=>{EditHandler(index,task)}}>Edit</button></li>;
           })}
         </ul>
       </div>
