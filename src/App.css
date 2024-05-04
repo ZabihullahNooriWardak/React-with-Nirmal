@@ -86,7 +86,11 @@ li:last-child {
   left: 824px;
   /* right: 20px; */
 }
-.no{
-  width: 8%;
-  margin: 0 auto;
+/* CSS for centering the h4 element */
+.no {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
 }
