@@ -3,16 +3,16 @@ import { deletTask } from "../taskSlice/taskSlice";
 import { useDispatch } from "react-redux";
 import { ReactComponent as MyIcon } from './deleteIcon.svg';
 import { useState } from "react";
-import { updateTask } from "../taskSlice/taskSlice";
+import { updateTaskR } from "../taskSlice/taskSlice";
 
 function  AllTask() {
     let taksArr=useSelector(state=>state.taskList.tasks);
     let dispatch=useDispatch();
-    let [edit,setEdit]=useState(null);
-    let [update,setUpdate]=useState("");
+    let [editIndex,setEditIndex]=useState(null);
+    let [updateTask,setUpdateTask]=useState("");
     function EditHandler(index,task){
-      setEdit(index);
-      setUpdate(task);
+      setEditIndex(index);
+      setUpdateTask(task);
     }
   return (
     <div>
@@ -20,7 +20,7 @@ function  AllTask() {
       <ul>
 
         {taksArr.length===0? <h4>no Task</h4> :taksArr.map((task,index) => {
-          return <li key={index}>{edit}?<> <input value={update}></input><button onClick={dispatch(updateTask({index:index,task:task}))}>Save</button></>:{task}--------------<MyIcon className="icon" onClick={()=>{dispatch(deletTask(index))}}/><button onClick={()=>{EditHandler(index,task)}}>Edit</button></li>;
+          return editIndex===index?<div key={index}> <input value={updateTask} onChange={(e)=>{setUpdateTask(e.target.value)}} ></input><button onClick={()=>{dispatch(updateTaskR({index:index,task:updateTask}));setEditIndex(null);setUpdateTask("");}}>Save</button></div> : <li key={index}>{task}--------------<MyIcon className="icon" onClick={()=>{dispatch(deletTask(index))}}/><button onClick={()=>{EditHandler(index,task)}}>Edit</button></li>;
         })}
       </ul>
     </div>
