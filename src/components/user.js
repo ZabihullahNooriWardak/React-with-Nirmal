@@ -2,10 +2,12 @@
 import { useState } from "react";
   function User(){
     let [users,setUsers]=useState([]);
-function userHandler(){
-fetch("https://jsonplaceholder.typicode.com/users").then((res)=>res.json()).then((data)=>{
-    setUsers(data);
-})
+async function userHandler(){
+let data=await fetch("https://jsonplaceholder.typicode.com/users");
+console.log(data)
+let userData=await data.json();
+console.log(userData);
+setUsers(userData);
 }
     return (
       <div>
