@@ -4,7 +4,7 @@ const App: React.FC = () => {
   return (
     <div>
       <h1>Hello, TypeScript!</h1>
-      <Product id={6} />
+      <Product id={6} name='ali' />
     </div>
   );
 }
